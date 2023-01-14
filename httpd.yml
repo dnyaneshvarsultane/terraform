@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Install HTTPD
+      apt: update_cache=yes

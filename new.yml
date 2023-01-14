@@ -1,0 +1,14 @@
+---
+- name: setup webserver
+  hosts: all
+  become: true
+  tasks:
+    - name: httpd installed
+      ansible.builtin.apt:
+        name: httpd
+        state: latest
+    - name: httpd service enabled
+      ansible.builtin.service:
+        name: httpd
+        enabled: true
+        state: started
